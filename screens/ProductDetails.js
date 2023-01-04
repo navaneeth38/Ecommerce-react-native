@@ -7,11 +7,12 @@ import {
   Button,
   StyleSheet,
   SafeAreaView,
+  Alert,
 } from 'react-native';
 import {Cart}  from '../assets/CartContext';
 import {getProduct} from '../services/ProductServices';
 
-const ProductDetails = ({route}) => {
+const ProductDetails = ({route,navigation}) => {
   //route the product that has clicked
 
   const {productId} = route.params; //route.params props passing through navigation
@@ -23,7 +24,16 @@ const ProductDetails = ({route}) => {
   });
 
   const onAddToCart = () =>{
-    // console.log(product)
+    Alert.alert("Added",
+    "this item has been added to cart",
+    [ 
+      {
+        text: "Ok",
+        onPress: () => {
+          console.log("Ok Pressed")
+          navigation.navigate("CartContextDisplay")
+        }
+      }])
     addItemTocart(product.id)
   }
   return (

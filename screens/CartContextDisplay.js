@@ -7,7 +7,7 @@ const CartContextDisplay = ({navigation}) => {
     useContext(Cart);
  
     const Totals = () => {
-	console.log(total)
+	
     let [total, setTotal] = useState(0);
     useEffect(() => {
       setTotal(getTotalPrice());

@@ -4,7 +4,7 @@ import {Text, StyleSheet} from 'react-native';
 const OrderSummary = () => {
     return (
         <Text>
-            Payement window....
+            Payment window....
         </Text>
     );
 }
