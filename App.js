@@ -8,6 +8,7 @@ import CartContextDisplay from './screens/CartContextDisplay';
 import CartContext from './assets/CartContext';
 import CartIcon from "./components/CartIcon.js";
 import OrderSummary from './screens/orderSummary';
+import DrawerIcon from './components/DrawerIcon';
 
 
 const Stack = createNativeStackNavigator();
@@ -16,7 +17,7 @@ function App() {
     <CartContext>
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="Products" component={ProductsList} options={({navigation}) => ({headerTitle: 'Products', headerRight: () => <CartIcon navigation={navigation} />})} />
+      <Stack.Screen name="Products" component={ProductsList} options={({navigation}) => ({headerLeft: ()=> <DrawerIcon navigation={navigation} />,headerRight: () => <CartIcon navigation={navigation} />})} />
           <Stack.Screen name="ProductDetails" component={ProductDetails} options={({navigation}) => ({title: 'Product Details', headerRight: () => <CartIcon navigation={navigation} />})} />
           <Stack.Screen name="CartContextDisplay" component={CartContextDisplay} options={({navigation}) => ({title: 'Cart', headerRight: () => <CartIcon navigation={navigation} />})} />
           <Stack.Screen name="OrderSummary" component={OrderSummary} />
